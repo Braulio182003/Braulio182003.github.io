@@ -8,14 +8,10 @@
         .actividades {
             display: none;
         }
-
-        h3 {
-            cursor: pointer;
-        }
     </style>
     <script>
-        function mostrarActividades(id) {
-            var actividades = document.getElementById(id);
+        function mostrarActividades() {
+            var actividades = document.getElementById("actividadesUnidad1");
             if (actividades.style.display === "none" || actividades.style.display === "") {
                 actividades.style.display = "block";
             } else {
@@ -29,7 +25,7 @@
     <h2>Programación Web I</h2>
     <p>182003 Braulio Carrizales Hernandez</p>
 
-    <h3 onclick="mostrarActividades('actividadesUnidad1')">Unidad No. 1</h3>
+    <h3 onclick="mostrarActividades()">Unidad No. 1</h3>
     <ul id="actividadesUnidad1" class="actividades">
         <li>Actividad No. 1 (Hola mundo) <a href="Actividad_1_index.html">link</a></li>
         <li>Actividad No. 2 (Títulos) <a href="Actividad_2_1_index.html">link</a></li>
@@ -46,15 +42,9 @@
         <li>Actividad No. 10 (Mapa) <a href="Actividad_10_index.html">link</a></li>
     </ul>
 
-    <h3 onclick="mostrarActividades('actividadesUnidad2')">Unidad No. 2</h3>
-    <ul id="actividadesUnidad2" class="actividades">
-        <li>Actividad No. 1 <a href="Unidad2_Actividad_1.html">link</a></li>
-        <li>Actividad No. 2 <a href="Unidad2_Actividad_2.html">link</a></li>
-        <li>Actividad No. 3 <a href="Unidad2_Actividad_3.html">link</a></li>
-        <li>Actividad No. 4 <a href="Unidad2_Actividad_4.html">link</a></li>
-        <li>Actividad No. 5 <a href="Unidad2_Actividad_5.html">link</a></li>
-        <li>Actividad No. 6 <a href="Unidad2_Actividad_6.html">link</a></li>
-        <li>Actividad No. 7 <a href="Unidad2_Actividad_7.html">link</a></li>
+    <h3>Unidad No. 2</h3>
+    <ul>
+        
     </ul>
 
     <h3>Unidad No. 3</h3>
@@ -63,4 +53,3 @@
     </ul>
 </body>
 </html>
-
