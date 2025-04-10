@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .simple td {
+    border: 2px solid black;
+    padding: 5px;
+  }
+  
+  .alineada td {
+    border: 2px solid black;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .completa th, .completa td {
+    border: 2px solid black;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  p {
+    margin: 10px 0 5px 0;
+  }
