@@ -1,31 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Unidad 1 - Actividad 06</title>
-    <link rel="icon" rel="icon" href="UPSLP_logo.ico">
-    <meta charset="utf-8">
-    <meta name="Autor" content="Braulio Carrizales Hernandez">
-    <meta name="Fecha" content="13 de febrero de 2025">
-    <meta name="Descripción" content="Widget">
+  <meta charset="utf-8">
+  <title>Unidad 2 | Actividad 06</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="author" content="Rubén Cárdenas Sánchez">
+  <meta name="fecha" content="13 de marzo de 2025">
+  <meta name="description" content="Bootstrap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
 </head>
 <body>
-    <h1>Unidad 1 - Actividad 06 :: Tema (Widget)</h1>
-    <h3>Siglas</h3>
-    <details name="siglas">
-        <summary>POP (Post Office Protocol)</summary>
-        <p>Servicio para acceder a la oficina postal virtual de correo electrónico</p>
-    </details>
-    <details name="siglas">
-        <summary>SMTP (Simple Mail Transfer Protocol)</summary>
-        <p>Protocolo para la transferencia de correo electrónico en formato simple</p>
-    </details>
-    <details name="siglas">
-        <summary>IP (Internet Protocol)</summary>
-        <p>Representa la dirección lógica de un dispositivo; está formada por 4 números en un rango de 0 a 255</p>
-    </details>
-    <details name="siglas">
-        <summary>HTTP (Hyper Text Transfer Protocol)</summary>
-        <p>Protocolo de transporte de archivos en formato HTML (páginas web)</p>
-    </details>
+
+  <h1>Unidad 2 | Actividad 06 :: Tema (Bootstrap)</h1>
+
+  <!-- Primer menú de navegación -->
+  <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav_1"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav_1">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">UPSLP</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Conócenos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Oferta educativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Egresados</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Bolsa de trabajo</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Segundo menú de navegación -->
+  <h2>Menú con tema de color</h2>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">&#127968;</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav_2"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav_2">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">UPSLP</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Conócenos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Oferta educativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Egresados</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Bolsa de trabajo</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Tercer menú de navegación personalizado -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: deeppink;">
+    <a class="navbar-brand" href="#">&#127968;</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav_9"
+            aria-controls="navbarNav_9" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav_9">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">UPSLP</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Conócenos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Oferta educativa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Egresados</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Bolsa de trabajo</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Scripts de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/e9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9ScQO9hZ2Ej4M6VAp9WZ91P0rmW+8abtTE1Pi"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGIrrSQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+
 </body>
 </html>
