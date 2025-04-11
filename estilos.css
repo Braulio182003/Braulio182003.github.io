@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Encabezado principal */
+  .titulo {
+    background-color: black;
+    color: lime;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px red, 4px 4px cyan;
+    text-decoration: line-through;
+    padding: 10px;
+  }
+  
+  /* Subtítulo 1 */
+  .subtitulo1 {
+    background-color: gray;
+    color: white;
+    text-decoration: line-through;
+    padding: 5px;
+  }
+  
+  /* Texto central */
+  .central {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0;
+  }
+  
+  /* Subtítulo 2 */
+  .subtitulo2 {
+    background-color: gray;
+    color: lightgreen;
+    font-size: 25px;
+    text-shadow: 1px 1px red;
+    text-decoration: line-through;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  /* Enlace */
+  .enlace {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .enlace:hover {
+    background-color: #444;
+  }
+  
+  /* Colores de párrafos */
+  .fucsia {
+    background-color: fuchsia;
+    color: blue;
+  }
+  
+  .azul {
+    background-color: navy;
+    color: white;
+  }
+  
+  .naranja {
+    background-color: orangered;
+    color: black;
+  }
+  
+  p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+  }
