@@ -10,8 +10,8 @@
         }
     </style>
     <script>
-        function mostrarActividades() {
-            var actividades = document.getElementById("actividadesUnidad1");
+        function mostrarActividades(id) {
+            var actividades = document.getElementById(id);
             if (actividades.style.display === "none" || actividades.style.display === "") {
                 actividades.style.display = "block";
             } else {
@@ -25,7 +25,7 @@
     <h2>Programación Web I</h2>
     <p>182003 Braulio Carrizales Hernandez</p>
 
-    <h3 onclick="mostrarActividades()">Unidad No. 1</h3>
+    <h3 onclick="mostrarActividades('actividadesUnidad1')">Unidad No. 1</h3>
     <ul id="actividadesUnidad1" class="actividades">
         <li>Actividad No. 1 (Hola mundo) <a href="Actividad_1_index.html">link</a></li>
         <li>Actividad No. 2 (Títulos) <a href="Actividad_2_1_index.html">link</a></li>
@@ -40,27 +40,35 @@
         <li>Actividad No. 9-1 (Quimica Organica) <a href="Actividad_9_1_index.html">link</a></li>
         <li>Actividad No. 9 (Formatos) <a href="Actividad_9_index.html">link</a></li>
         <li>Actividad No. 10 (Mapa) <a href="Actividad_10_index.html">link</a></li>
-        <br>
-        <br>
-        <h3>Unidad No. 2</h3>
+    </ul>
+
+    <h3 onclick="mostrarActividades('actividadesUnidad2')">Unidad No. 2</h3>
+    <ul id="actividadesUnidad2" class="actividades">
         <li>Actividad No. 1 Parcial 2 (Tablas) <a href="Actividad1_P2.index.html">link</a></li>
         <li>Actividad No. 2 Parcial 2 (Tablas Combinadas) <a href="Actividad2_P2.index.html">link</a></li>
         <li>Actividad No. 3 Parcial 2 (Mapa de sitio) <a href="Actividad3_P2.index.html">link</a></li>
         <li>Actividad No. 4 Parcial 2 (Estilos de Texto) <a href="Actividad4_P2.index.html">link</a></li>
-        <li>Actividad No. 4.2 Parcial 2 (Tipografia) <a href="Actividad4.2_P2.index.html">link</a></li>
-        <li>Actividad No. 5 Parcial 2 (Menu) <a href="Actividad5_P2.index.html">link</a></li>
-        <li>Actividad No. 6 Parcial 2 (Menu Bootstrap) <a href="Actividad6_P2.index.html">link</a></li>
-        <li>Actividad No. 7 Parcial 2 (SubMenu) <a href="Actividad7_P2.index.html">link</a></li>
-        <li>Actividad No. 7-1 Parcial 2 (Menu Proyecto) <a href="Actividad7.1_P2.index.html">link</a></li>
+        <li>Actividad No. 4.2 Parcial 2 (Tipografía) <a href="Actividad4.2_P2.index.html">link</a></li>
+        <li>Actividad No. 5 Parcial 2 (Menú) <a href="Actividad5_P2.index.html">link</a></li>
+        <li>Actividad No. 6 Parcial 2 (Menú Bootstrap) <a href="Actividad6_P2.index.html">link</a></li>
+        <li>Actividad No. 7 Parcial 2 (Submenú) <a href="Actividad7_P2.index.html">link</a></li>
+        <li>Actividad No. 7-1 Parcial 2 (Menú Proyecto) <a href="Actividad7.1_P2.index.html">link</a></li>
         <li>Actividad No. 8 Parcial 2 (Cubo) <a href="Actividad8_P2.index.html">link</a></li>
     </ul>
-    <h3 onclick="mostrarActividades()">Unidad No. 2</h3>
-    <ul id="actividadesUnidad2" class="actividades">
+
+    <h3 onclick="mostrarActividades('actividadesUnidad3')">Unidad No. 3</h3>
+    <ul id="actividadesUnidad3" class="actividades">
+        <li>Actividad No. 1 Parcial 3 (Hola mundo)<a href="Actividad1_P3.index.html">link</a></li>
+        <li>Actividad No. 2 Parcial 3 (Pop-up)<a href="Actividad2_P3.index.html">link</a></li>
+        <li>Actividad No. 3 Parcial 3 (Calculadora)<a href="Actividad3_P3.index.html">link</a></li>
+        <li>Actividad No. 3.1 Parcial 3 (Tablas)<a href="Actividad3.1_P3.index.html">link</a></li>
+        <li>Actividad No. 4 Parcial 3 (GetElementById)<a href="Actividad4_P3.index.html">link</a></li>
+        <li>Actividad No. 5 Parcial 3 (Formularios)<a href="Actividad5_P3.index.html">link</a></li>
+        <li>Actividad No. 6 Parcial 3 (Eventos)<a href="Actividad6_P3.index.html">link</a></li>
+        <li>Actividad No. 7 Parcial 3 (Controles)<a href="Actividad7_P3.index.html">link</a></li>
     </ul>
-    <h3>Unidad No. 3</h3>
     <ul>
-        <li>Proyecto</li>
-        <a bienvenida.html">link</a>
+    <h3>Proyecto</h3>
     </ul>
 </body>
 </html>
