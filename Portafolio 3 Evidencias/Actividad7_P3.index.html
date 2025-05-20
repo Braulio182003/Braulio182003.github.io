@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 3 | Actividad 07</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Braulio Carrizales Hernandez">
+    <meta name="Fecha" content="13 de mayo de 2025">
+    <meta name="Descripción" content="JavaScript">
+    <script src="Actividad_07.js"></script>
+</head>
+<body>
+    <h1>Unidad 3 | Actividad 07 : Tema (JavaScript)</h1>
+    <form class="form-horizontal" name="frmControles" action="#" method="post" onsubmit="funcionControles()">
+        <fieldset>
+            <!-- Form Name -->
+            <legend>Controles</legend>
+            <!-- Multiple Radios -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="groupRadio">Elige el tamaño</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="groupRadio-0">
+                            <input type="radio" name="groupRadio" id="groupRadio-0" value="99" checked="checked">
+                            Combo pequeño
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="groupRadio-1">
+                            <input type="radio" name="groupRadio" id="groupRadio-1" value="129">
+                            Combo mediano
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="groupRadio-2">
+                            <input type="radio" name="groupRadio" id="groupRadio-2" value="159">
+                            Combo grande
+                        </label>
+                    </div>
+                </div>
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="groupCheck">Elige ingredientes</label>
+  <div class="col-md-4">
+    <div class="checkbox">
+      <label for="groupCheck-0">
+        <input type="checkbox" name="groupCheck" id="groupCheck-0" value="1">
+        Queso
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for="groupCheck-1">
+        <input type="checkbox" name="groupCheck" id="groupCheck-1" value="2">
+        Jamón
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for="groupCheck-2">
+        <input type="checkbox" name="groupCheck" id="groupCheck-2" value="3">
+        Tocino
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for="groupCheck-3">
+        <input type="checkbox" name="groupCheck" id="groupCheck-3" value="4">
+        Champiñón
+      </label>
+    </div>
+    <div class="checkbox">
+      <label for="groupCheck-4">
+        <input type="checkbox" name="groupCheck" id="groupCheck-4" value="5">
+        Pepperoni
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectBasic">Elige complemento</label>
+  <div class="col-md-5">
+    <select id="selectBasic" name="selectBasic" class="form-control">
+      <option value="0">Ninguno</option>
+      </select>
+      <!-- Text input -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Nombre completo</label>  
+  <div class="col-md-4">
+    <input id="textinput" name="textinput" type="text" placeholder="Escribe tu nombre" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Number input -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="numberinput">Edad</label>  
+  <div class="col-md-4">
+    <input id="numberinput" name="numberinput" type="number" placeholder="Ingrese su edad" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Submit Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="submitButton" name="submitButton" class="btn btn-primary">Enviar</button>
+  </div>
+</div>
+ <!-- Botones -->
+            <div class="form-group">
+                <div class="col-md-4">
+                    <input type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-primary">
+                    <input type="reset" id="btnReiniciar" name="btnReiniciar" class="btn btn-info">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
