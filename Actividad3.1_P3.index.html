@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Unidad 3 | Actividad 03</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Braulio Carrizales Hernandez">
+    <meta name="Fecha" content="30 de abril de 2023">
+    <meta name="Descripción" content="JavaScript">
+</head>
+<body>
+    <h1>Unidad 3 | Actividad 03 :: Tema (JavaScript)</h1>
+    <script>
+        let opc = window.prompt("Menú de opciones:\n 1. Sumar\n 2. Restar\n 3. Multiplicar\n 4. Dividir\n 5. Módulo\n¿Qué opción deseas?");
+        let val_1 = Number(window.prompt("Dame el primer valor:"));
+        let val_2 = Number(window.prompt("Dame el segundo valor:"));
+
+        document.write("<h2>Resultado:</h2>");
+        
+        switch (opc) {
+            case "1": // Sumar
+                document.write("<h3>Operación Suma</h3>");
+                document.write(`<code>${val_1} + ${val_2} = ${val_1 + val_2}</code>`);
+                break;
+            case "2": // Restar
+                document.write("<h3>Operación Resta</h3>");
+                document.write(`<code>${val_1} - ${val_2} = ${val_1 - val_2}</code>`);
+                break;
+            case "3": // Multiplicar
+                document.write("<h3>Operación Multiplicación</h3>");
+                document.write(`<code>${val_1} * ${val_2} = ${val_1 * val_2}</code>`);
+                break;
+            case "4": // Dividir
+                if (val_2 !== 0) {
+                    document.write("<h3>Operación División</h3>");
+                    document.write(`<code>${val_1} / ${val_2} = ${val_1 / val_2}</code>`);
+                } else {
+                    document.write("<h3>Error</h3>");
+                    document.write("<code>No es posible dividir por cero.</code>");
+                }
+                break;
+            case "5": // Módulo
+                document.write("<h3>Operación Módulo</h3>");
+                document.write(`<code>${val_1} % ${val_2} = ${val_1 % val_2}</code>`);
+                break;
+            default:
+                document.write("<h3>Error</h3>");
+                document.write("<code>Opción no válida, por favor intenta nuevamente.</code>");
+                break;
+        }
+    </script>
+</body>
+</html>

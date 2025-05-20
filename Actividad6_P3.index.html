@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Formulario de Registro</title>
+    <meta charset="UTF-8">
+    <meta name="Autor" content="Braulio Carrizales Hernandez">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Registro de Usuario</h1>
+        <form class="form-horizontal">
+            <!-- Nombre -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="txtNombre">Nombre</label>
+                <div class="col-md-5">
+                    <input id="txtNombre" name="txtNombre" class="form-control" type="text" placeholder="Escribe tu nombre">
+                </div>
+            </div>
+
+            <!-- Apellido -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="txtApellido">Apellido</label>
+                <div class="col-md-5">
+                    <input id="txtApellido" name="txtApellido" class="form-control" type="text" placeholder="Escribe tu apellido">
+                </div>
+            </div>
+
+            <!-- Fecha de Nacimiento -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="txtFechaNacimiento">Fecha de Nacimiento</label>
+                <div class="col-md-5">
+                    <input id="txtFechaNacimiento" name="txtFechaNacimiento" class="form-control" type="date">
+                </div>
+            </div>
+
+            <!-- Botón -->
+            <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+                    <input type="submit" id="btnRegistrar" name="btnRegistrar" class="btn btn-success" value="Registrar">
+                    <input type="reset" id="btnResetear" name="btnResetear" class="btn btn-danger" value="Borrar">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
