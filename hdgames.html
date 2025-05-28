@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descubre los mejores juegos de Mortal Kombat en alta definición. Mortal Kombat 9, X, 11 y el nuevo MK1.">
+  <meta name="keywords" content="Mortal Kombat, MK, juegos de pelea, NetherRealm, HD Games">
+  <meta name="author" content="MK Fan Community">
+  <title>HD Games - Mortal Kombat </title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600&display=swap" as="style">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <style>
+    :root {
+      --mk-red: #d80000;
+      --mk-gold: #ffd700;
+      --mk-dark: #121212;
+      --mk-darker: #0a0a0a;
+      --mk-light: #f8f9fa;
+    }
+    
+    body {
+      background: linear-gradient(to right, var(--mk-dark), var(--mk-darker));
+      color: var(--mk-light);
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.95) !important;
+      border-bottom: 3px solid var(--mk-red);
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.9) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .navbar-brand {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--mk-gold) !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1.5rem;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+    }
+    
+    .nav-link {
+      color: var(--mk-gold) !important;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.5rem 1rem;
+      margin: 0 0.25rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--mk-red);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: white !important;
+    }
+    
+    .nav-link:hover::before {
+      width: 100%;
+    }
+    
+    .navbar-toggler {
+      border-color: var(--mk-gold);
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 215, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    main {
+      flex: 1;
+      padding-top: 2rem;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+    }
+    
+    .display-5 {
+      color: var(--mk-gold);
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .display-5::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--mk-red), transparent);
+    }
+    
+    .card {
+      background-color: rgba(27, 27, 27, 0.8);
+      border: 1px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px var(--mk-red);
+      border-color: var(--mk-gold);
+    }
+    
+    .card-img-top {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+      border-bottom: 3px solid var(--mk-red);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover .card-img-top {
+      border-bottom-color: var(--mk-gold);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-title {
+      color: var(--mk-gold);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .card-text {
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn-mk {
+      background-color: var(--mk-red);
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-mk:hover {
+      background-color: var(--mk-gold);
+      color: black;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(216, 0, 0, 0.4);
+    }
+    
+    footer {
+      background-color: #000;
+      color: var(--mk-gold);
+      border-top: 3px solid var(--mk-red);
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-icons a {
+      color: var(--mk-gold);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: var(--mk-red);
+      transform: translateY(-3px);
+    }
+    
+    .blood-effect {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .blood-effect::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg ...');
+        background-size: 20%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .blood-effect:hover::after {
+        opacity: 0.3;
+    }
+    
+    @media (max-width: 768px) {
+      .card-img-top {
+        height: 250px;
+      }
+      
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+      
+      .display-5 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .card-img-top {
+        height: 200px;
+      }
+      
+      .display-5 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="portada.html">Mortal Kombat</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="bienvenida.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container py-4 py-lg-5">
+      <h1 class="display-5 fw-bold text-center mb-4 mb-lg-5">Mortal Kombat Juegos HD</h1>
+      
+      <div class="row g-4 g-lg-5">
+        <div class="col-md-6 col-lg-3">
+          <div class="card blood-effect">
+            <div class="ratio ratio-4x3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wbwALe_qBaY?si=XFkKbqeBZvqydzWS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Mortal Kombat 9</h5>
+              <p class="card-text">El reboot que redefinió la saga con gráficos HD, nuevas mecánicas y una historia épica que reinicia la línea temporal.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-danger">9.5/10</span>
+                <a href="https://youtu.be/wbwALe_qBaY?si=IzdDnDOZHvl7GDve" class="btn btn-mk">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card blood-effect">
+            <div class="ratio ratio-4x3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ci6lMQNLKZU?si=3g5VNVSu58iNQuhc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Mortal Kombat X</h5>
+              <p class="card-text">Nuevos personajes, estilos de pelea variables y un modo historia cinematográfico que continúa 25 años después.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-danger">9/10</span>
+                <a href="https://youtu.be/Ci6lMQNLKZU?si=cmYUXbauUrTMosxR" class="btn btn-mk">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card blood-effect">
+            <div class="ratio ratio-4x3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UoTams2yc0s?si=poEpuvfT6UMKDnNv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Mortal Kombat 11</h5>
+              <p class="card-text">Gráficos espectaculares, personalización profunda de personajes y la introducción de los devastadores Fatal Blows.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-danger">9.3/10</span>
+                <a href="https://youtu.be/UoTams2yc0s?si=lCp239ItqTIv0wkm" class="btn btn-mk">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card blood-effect">
+            <div class="ratio ratio-4x3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UZ6eFEjFfJ0?si=3XhAgiHLyWeXiFwh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Mortal Kombat 1</h5>
+              <p class="card-text">El renacimiento de la franquicia con gráficos de última generación, nuevo sistema de Kameo Fighters y una historia revolucionaria.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-danger">9.7/10</span>
+                <a href="https://youtu.be/UZ6eFEjFfJ0?si=Q2LuNXAJq85bHvjM" class="btn btn-mk">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+    <footer class="text-center mt-5 py-3" style="background-color: rgba(0,0,0,0.8); color: goldenrod;">
+        <p>© 2025 | Proyecto Mortal Kombat</p>
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = `0 10px 20px ${getComputedStyle(document.documentElement).getPropertyValue('--mk-red')}`;
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.style.boxShadow = '';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
+      
+      if ('IntersectionObserver' in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.classList.remove('lazy');
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
