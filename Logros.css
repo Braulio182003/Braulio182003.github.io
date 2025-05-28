@@ -1,0 +1,12 @@
+body {
+  background-image: url('Arboles.jpg'); /* <-- Coloca aquí tu imagen de fondo */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+h1{
+    font-family: 'Mortal Kombat 2', sans-serif;                                                            
+}
