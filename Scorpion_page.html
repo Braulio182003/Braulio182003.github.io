@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorpion & Sub-Zero - Mortal Kombat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/mortal-kombat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blood-red: #8B0000;
+            --gold: #AC9203;
+            --ice-blue: #00ccff;
+            --dark-bg: #121212;
+            --section-bg: rgba(20, 20, 20, 0.8);
+        }
+
+        body {
+            background: url(Netherrealm.jpg) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        .navbar {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-bottom: 2px solid darkred;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        }
+        .navbar-brand, .nav-link {
+            color: goldenrod !important;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            color: white !important;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid darkred;
+        }
+        .dropdown-item {
+            color: goldenrod !important;
+        }
+        .dropdown-item:hover {
+            color: white !important;
+            background-color: darkred;
+            text-shadow: 0 0 5px #ff0000;
+        }
+        .btn-mk:hover {
+            background-color: var(--mk-gold);
+            color: black;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(216, 0, 0, 0.4);
+        }
+        .character-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: var(--section-bg);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            border-left: 4px solid var(--blood-red);
+            max-width: 1200px;
+            transition: transform 0.3s ease;
+        }
+
+        .character-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(139, 0, 0, 0.4);
+        }
+
+        .subzero-section {
+            border-left: 4px solid var(--ice-blue);
+        }
+
+        .subzero-section:hover {
+            box-shadow: 0 12px 20px rgba(0, 204, 255, 0.4);
+        }
+
+        .character-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 1rem;
+            border: 4px solid var(--gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .character-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .subzero-image {
+            border: 4px solid var(--ice-blue);
+            box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+        }
+
+        .subzero-image:hover {
+            box-shadow: 0 0 30px rgba(0, 204, 255, 0.6);
+        }
+
+        .character-text {
+            flex: 1;
+            padding: 1.5rem;
+            min-width: 300px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Mortal Kombat', sans-serif;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .subzero-title {
+            color: var(--ice-blue);
+        }
+
+        .character-year {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(139, 0, 0, 0.5);
+            border-radius: 3px;
+        }
+
+        .subzero-year {
+            background: rgba(0, 102, 204, 0.5);
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .content-section {
+            background: var(--section-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 1000px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            border-left: 4px solid var(--blood-red);
+        }
+
+        .subzero-content {
+            border-left: 4px solid var(--ice-blue);
+        }
+
+        .table-dark {
+            background-color: rgba(10, 10, 10, 0.8);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table-dark th {
+            background-color: rgba(139, 0, 0, 0.5);
+            color: var(--gold);
+            font-family: 'Mortal Kombat', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .table-dark td {
+            color: white;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .subzero-table th {
+            background-color: rgba(0, 102, 204, 0.5);
+        }
+
+        details {
+            margin-bottom: 1rem;
+            background: rgba(10, 10, 10, 0.7);
+            border-radius: 5px;
+            padding: 1rem;
+            border-left: 3px solid var(--gold);
+        }
+
+        .subzero-details {
+            border-left: 3px solid var(--ice-blue);
+        }
+
+        details summary {
+            font-weight: bold;
+            color: var(--gold);
+            cursor: pointer;
+            font-family: 'Mortal Kombat', sans-serif;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .subzero-summary {
+            color: var(--ice-blue);
+        }
+
+        details summary:hover {
+            color: white;
+        }
+
+        details p {
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        .blood-drop {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.6) 0%, rgba(139, 0, 0, 0) 70%);
+            filter: blur(5px);
+            z-index: -1;
+            animation: float 15s infinite linear;
+        }
+
+        .ice-crystal {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(0, 204, 255, 0.5) 0%, rgba(0, 204, 255, 0) 70%);
+            filter: blur(4px);
+            z-index: -1;
+            animation: float 18s infinite linear reverse;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50px, 30px);
+            }
+            50% {
+                transform: translate(0, 60px);
+            }
+            75% {
+                transform: translate(-50px, 30px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .section-divider h2 {
+            display: inline-block;
+            padding: 0 2rem;
+            background: var(--dark-bg);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            z-index: 0;
+        }
+
+        .subzero-divider::before {
+            background: linear-gradient(to right, transparent, var(--ice-blue), transparent);
+        }
+
+        @media (max-width: 768px) {
+            .character-section {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+            
+            .character-image {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .character-text {
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blood-drop" style="top: 20%; left: 10%;"></div>
+    <div class="blood-drop" style="top: 60%; left: 80%;"></div>
+    <div class="ice-crystal" style="top: 30%; left: 85%;"></div>
+    <div class="ice-crystal" style="top: 70%; left: 15%;"></div>
+
+    <nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="portada.html">Mortal Kombat</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="bienvenida.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container py-4">
+        <div class="character-section">
+            <img src="Hanzo.png" alt="Hanzo Hazashi" class="character-image">
+            <div class="character-text">
+                <h2>Hanzo Hazashi / Scorpion</h2>
+                <span class="character-year">Mortal Kombat 9</span>
+                <p>Hanzo Hasashi, anteriormente líder de un prestigioso clan de ninjas, los Shirai Ryu. Sufrió una tragedia devastadora cuando su gente fue masacrada por el hechicero Quan Chi. En el momento de su muerte, Hanzo desconocía que Quan Chi era el responsable del ataque y juró vengarse de quienes destruyeron a su clan y familia.</p>
+                <p>Renació como un demonio consumido por la sed de venganza y, paradójicamente, se alió con Quan Chi. Este último manipuló a Hanzo, mostrándole una visión falsa en la que muestra al clan de los Lin Kuei masacrando a su clan y sobre todo el responsable de matar a su familia a manos de su líder, Sub zero (Bi Han).</p>
+                <p>Durante el evento del torneo del Mortal Kombat, Scorpión enfrenta a Sub Zero. Este combate es intenso, ya que Scorpion cree que fue causada por Sub-Zero. En el enfrentamiento, Scorpion logra derrotar a Sub-Zero (Bi han) y, en un momento crucial, lo mata brutalmente ensendiendo fuego a su cuerpo, cumpliendo su venganza. Sin embargo, más tarde se revela que Quan Chi manipuló a Scorpion para que creyera que Sub-Zero era el responsable.</p>
+            </div>
+        </div>
+
+        <div class="character-section">
+            <div class="character-text">
+                <h2>Scorpion</h2>
+                <span class="character-year">Mortal Kombat X</span>
+                <p>Durante los eventos posteriores al Torneo de Mortal Kombat, Scorpion (Hanzo Hasashi) resurge como un espectro atormentado por su pasado. Tras descubrir la verdad sobre la muerte de su clan y familia, se entera de que Quan Chi fue el verdadero responsable, no solo de manipularlo para asesinar a Bi-Han (Sub-Zero original), sino también de resucitar a su linaje como espectros bajo su control.</p>
+                <p>En Mortal Kombat X, Hanzo, liberado del influjo de Quan Chi, busca redención. Sin embargo, el nuevo Sub-Zero (Kuai Liang, hermano de Bi-Han) lo confronta, desconfiando de su naturaleza violenta. A pesar de la tensión, Scorpion lucha junto a los guerreros de la Tierra contra los revenants de Quan Chi. En un momento crucial, Scorpion logra enfrentarse al hechicero y, tras una batalla feroz, lo decapita, consumando su venganza definitiva.</p>
+                <p>No obstante, la paz es efímera. El resurgimiento del Clan Shirai Ryu (ahora bajo el liderazgo de Hanzo) y su alianza tensa con el Lin Kuei marcan un nuevo camino para Scorpion: ya no como un demonio sediento de sangre, sino como un guerrero que busca honrar a los suyos y expiar sus errores.</p>
+            </div>
+            <img src="Scor.jpg" alt="Scorpion MKX" class="character-image">
+        </div>
+
+        <div class="character-section">
+            <div class="character-text">
+                <h2>Hanzo Hazashi</h2>
+                <span class="character-year">Mortal Kombat 11</span>
+                <p>En Mortal Kombat 11, el viaje de Scorpion alcanza su punto culminante cuando enfrenta no solo a sus enemigos, sino a su propio pasado. El Hanzo Hasashi del presente, ahora un líder más sereno y redimido, se ve obligado a confrontar a su yo más joven —traído al presente por Kronika—, un espectro ardiente aún consumido por la furia y la sed de venganza contra Sub-Zero y el Lin Kuei.</p>
+                <p>El momento clave ocurre cuando el Scorpion del pasado, al ver a Kuai Liang (Sub-Zero) aliado con su yo futuro, lo ataca creyendo que es una traición. Sin embargo, el Hanzo actual lo detiene y, tras un intenso combate, le muestra la verdad: que su odio solo lo convirtió en un peón de Quan Chi y que la verdadera paz solo llega cuando perdona y honra a su clan sin caer en la violencia ciega.</p>
+                <p>Al aceptar esta lección, el Scorpion del pasado renuncia a su identidad como espectro demoníaco y recupera su humanidad, transformándose nuevamente en Hanzo Hasashi. Este acto de redención no solo une a ambas versiones de Scorpion, sino que consolida su legado como protector del Shirai Ryu, dejando atrás su faceta de "Scorpion" vengativo para convertirse en un guerrero honorable.</p>
+            </div>
+            <img src="Scor_11.jpg" alt="Scorpion MK11" class="character-image">
+        </div>
+
+        <div class="content-section">
+            <h2>Datos Extras de Scorpion</h2>
+            <h3>Apariciones en Películas</h3>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Película</th>
+                        <th>Año</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mortal Kombat</td>
+                        <td>1995</td>
+                    </tr>
+                    <tr>
+                        <td>Mortal Kombat: Aniquilación</td>
+                        <td>1997</td>
+                    </tr>
+                    <tr>
+                        <td>Mortal Kombat</td>
+                        <td>2021</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Scorpion como Personaje Invitado</h3>
+            <details>
+                <summary>Injustice: Gods Among Us</summary>
+                <p>Scorpion fue un luchador descargable en este juego de lucha con personajes de DC Comics.</p>
+            </details>
+            <details>
+                <summary>NBA Jam: On Fire Edition</summary>
+                <p>Scorpion apareció como un personaje secreto en este juego de baloncesto arcade.</p>
+            </details>
+        </div>
+
+        <div class="section-divider subzero-divider">
+            <h2 class="subzero-title">SUB-ZERO</h2>
+        </div>
+
+        <div class="character-section subzero-section">
+            <img src="subzeromk9.png" alt="Sub-Zero original" class="character-image subzero-image">
+            <div class="character-text">
+                <h2 class="subzero-title">Bi-Han / Sub-Zero</h2>
+                <span class="character-year subzero-year">Mortal Kombat 9</span>
+                <p>Bi-Han, el Sub-Zero original, era el gran maestro del Lin Kuei y hermano mayor de Kuai Liang. Como miembro del clan Lin Kuei, Bi-Han era un guerrero frío y calculador, conocido por su dominio del hielo y sus tácticas implacables. Durante el torneo de Mortal Kombat, fue enviado para asesinar al hechicero Shang Tsung, pero su destino cambiaría para siempre al encontrarse con Scorpion.</p>
+                <p>En un fatídico encuentro, Bi-Han fue asesinado por Scorpion, quien buscaba venganza al creer que Sub-Zero había masacrado a su clan y familia. Lo que Scorpion no sabía era que Bi-Han había sido manipulado por Quan Chi, quien en realidad era el responsable. La muerte de Bi-Han marcó el inicio de una saga de venganza entre los clanes Shirai Ryu y Lin Kuei, y llevaría a su hermano menor, Kuai Liang, a tomar el manto de Sub-Zero.</p>
+            </div>
+        </div>
+
+        <div class="character-section subzero-section">
+            <div class="character-text">
+                <h2 class="subzero-title">Kuai Liang / Sub-Zero</h2>
+                <span class="character-year subzero-year">Mortal Kombat X</span>
+                <p>Tras la muerte de su hermano Bi-Han, Kuai Liang tomó el manto de Sub-Zero y se convirtió en el nuevo gran maestro del Lin Kuei. A diferencia de su hermano, Kuai Liang buscaba redimir el nombre de su clan y honrar la memoria de Bi-Han. En Mortal Kombat X, Sub-Zero se enfrenta a numerosos desafíos, incluyendo la corrupción del Lin Kuei por parte de la Cyber Initiative.</p>
+                <p>Kuai Liang demostró ser un líder compasivo pero firme, reconstruyendo el Lin Kuei como una fuerza para el bien. Una de sus pruebas más difíciles fue enfrentarse a Scorpion, quien seguía buscando venganza contra el Lin Kuei. Sin embargo, tras descubrir la verdad sobre la manipulación de Quan Chi, Sub-Zero y Scorpion formaron una alianza inesperada para derrotar al verdadero enemigo. Este acto marcó el inicio de una nueva era para ambos clanes.</p>
+            </div>
+            <img src="subzeromkx.png" alt="Sub-Zero MKX" class="character-image subzero-image">
+        </div>
+
+        <div class="character-section subzero-section">
+            <div class="character-text">
+                <h2 class="subzero-title">Sub-Zero</h2>
+                <span class="character-year subzero-year">Mortal Kombat 11</span>
+                <p>En Mortal Kombat 11, Kuai Liang como Sub-Zero alcanza la cúspide de su desarrollo como personaje. Ahora un líder sabio y respetado, debe enfrentar los desafíos que plantea Kronika al alterar el tiempo. Una de las pruebas más difíciles es encontrarse con su hermano Bi-Han, traído desde el pasado, quien aún representa la filosofía más dura y despiadada del Lin Kuei.</p>
+                <p>El conflicto entre los hermanos Sub-Zero representa la dualidad del clan: Bi-Han como el frío asesino del pasado, y Kuai Liang como el líder redimido del presente. En un momento crucial, Kuai Liang logra hacer ver a su hermano el error de sus caminos, demostrando que la verdadera fuerza del Lin Kuei reside en la protección de la Tierra, no en la violencia ciega.</p>
+                <p>Al final de los eventos de Mortal Kombat 11, Sub-Zero emerge no solo como un poderoso guerrero, sino como un líder sabio que ha logrado superar las sombras del pasado de su clan. Su alianza con Scorpion y los demás guerreros de la Tierra demuestra cómo ha transformado el Lin Kuei en una fuerza para el bien, honrando tanto a su hermano como a su linaje.</p>
+            </div>
+            <img src="subzeromk11.png" alt="Sub-Zero MK11" class="character-image subzero-image">
+        </div>
+
+        <div class="content-section subzero-content">
+            <h2 class="subzero-title">Datos Extras de Sub-Zero</h2>
+            <h3 class="subzero-subtitle">Apariciones en Películas</h3>
+            <table class="table table-dark table-striped subzero-table">
+                <thead>
+                    <tr>
+                        <th>Película</th>
+                        <th>Año</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mortal Kombat</td>
+                        <td>1995</td>
+                    </tr>
+                    <tr>
+                        <td>Mortal Kombat: Aniquilación</td>
+                        <td>1997</td>
+                    </tr>
+                    <tr>
+                        <td>Mortal Kombat</td>
+                        <td>2021</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subzero-subtitle">Sub-Zero como Personaje Invitado</h3>
+            <details class="subzero-details">
+                <summary class="subzero-summary">Injustice 2</summary>
+                <p>Sub-Zero fue un luchador descargable en este juego de lucha con personajes de DC Comics.</p>
+            </details>
+            <details class="subzero-details">
+                <summary class="subzero-summary">Fortnite</summary>
+                <p>Sub-Zero apareció como skin crossover en el popular juego Battle Royale.</p>
+            </details>
+            <details class="subzero-details">
+                <summary class="subzero-summary">Tekken 7</summary>
+                <p>Sub-Zero hizo una aparición especial como personaje invitado en este juego de lucha.</p>
+            </details>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3" style="background-color: rgba(0,0,0,0.8); color: goldenrod;">
+      <p>© 2025 | Proyecto Mortal Kombat</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        const sections = document.querySelectorAll('.character-section, .content-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

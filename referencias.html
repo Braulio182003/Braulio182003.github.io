@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url(Ref.jpg) no-repeat center center;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .content-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .scroll-box {
+            height: 200px;
+            overflow-y: scroll; 
+            border: 1px solid #1f1e1e1a;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #1b1b1b70;
+        }
+        .circular-image-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .circular-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; 
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid darkred;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar-brand, .nav-link {
+            color: goldenrod !important;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            color: white !important;
+        }
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid darkred;
+        }
+        .dropdown-item {
+            color: goldenrod !important;
+        }
+        .dropdown-item:hover {
+            color: white !important;
+            background-color: darkred;
+        }
+
+        .logo-animation {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            filter: url(#wavy) blur(1px);
+        }
+        
+        .logo-animation:before,
+        .logo-animation:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        .logo-animation:before {
+            box-shadow: 0 0 20px rgb(143, 176, 255), inset 0 0 20px rgb(8, 52, 160);
+            -webkit-box-reflect: below 5px linear-gradient(transparent, transparent, #0002);
+            animation: rgb-pulse 4s ease-in-out infinite alternate;
+        }
+        
+        .logo-animation:after {
+            box-shadow: 0 0 5px white, inset 0 0 5px white;
+            animation: rgb-border 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes rgb-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgb(143, 176, 255), inset 0 0 20px rgb(8, 52, 160);
+            }
+            50% {
+                box-shadow: 0 0 30px rgb(143, 176, 255), inset 0 0 30px rgb(8, 52, 160);
+            }
+        }
+        
+        @keyframes rgb-border {
+            0%, 100% {
+                border-color: white;
+                box-shadow: 0 0 5px white, inset 0 0 5px white;
+            }
+            50% {
+                border-color: rgb(143, 176, 255);
+                box-shadow: 0 0 10px rgb(143, 176, 255), inset 0 0 10px rgb(8, 52, 160);
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg style="display: none;">
+        <filter id="wavy">
+            <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="3" seed="2">
+                <animate attributeName="baseFrequency" dur="30s" values="0.015; 0.008; 0.015" repeatCount="indefinite"></animate>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="15"></feDisplacementMap>
+        </filter>
+    </svg>
+
+    <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="portada.html">Kombatientes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="bienvenida.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <br>
+        <h2 class="text-left">Referencias videos</h2>
+        <div class="circular-image-container">
+            <div class="logo-animation"></div>
+            <img src="Youtube_logo.png" alt="Imagen de referencia" class="circular-image">
+        </div>
+        <div class="scroll-box">
+            <p>1.- YouTube. (27 jul 2024). MORTAL KOMBAT (1, 2 y 3) El Inicio De La SAGA. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=G7J00E4XAOc. target="_blank">https://www.youtube.com/watch?v=G7J00E4XAOc</a> </p>
+            <p>2.- YouTube. (26 abr 2019). MORTAL KOMBAT 4, 5 & 6 │ 30 CURIOSIDADES e historia - Clark Kane. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=gm1imMM5ztY. target="_blank">https://www.youtube.com/watch?v=gm1imMM5ztY.</a></p>
+            <p>3.- YouTube. (19 may 2023). The EVOLUTION of MORTAL KOMBAT Games [1992-2023]. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=QOiM0qbiCj0. target="_blank">https://www.youtube.com/watch?v=QOiM0qbiCj0.</a></p>
+            <p>4.- YouTube. (19 sept 2023). Mortal Kombat Deception 2004 / Historia Resumen. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=BgnIw7t6v1Y. target="_blank">https://www.youtube.com/watch?v=BgnIw7t6v1Y.</a></p>
+            <p>5.- YouTube. (27 jul 2024). MORTAL KOMBAT 9: El Reboot de la saga pero en HD RESUMEN | HollowAV. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=usm0uBsuLYc. target="_blank">https://www.youtube.com/watch?v=usm0uBsuLYc.</a></p>
+            <p>6.- YouTube. (4 mar 2024). Mortal Kombat Cronología e Historia Completa (Parte 1) - El Combate de los 6 Reinos | HFLain. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=FjdnzyBLPiU. target="_blank">https://www.youtube.com/watch?v=FjdnzyBLPiU.</a></p>
+            <p>7.- YouTube. (11 jul 2024). Mortal Kombat Cronología e Historia Completa (Parte 2) - El Final de una Era | HFLain. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=tiYPe5_qsiE&list=PL9-l5Tdf5DXol-0t87rKO2cBNql_ld9UV target="_blank">https://www.youtube.com/watch?v=tiYPe5_qsiE&list=PL9-l5Tdf5DXol-0t87rKO2cBNql_ld9UV</a></p>
+            <p>8.- YouTube. (9 oct 2023). Mortal Kombat vs DC Universe 2008 / Historia Resumen. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=aQRQTaBFXLs. target="_blank">https://www.youtube.com/watch?v=aQRQTaBFXLs.</a></p>
+            <p>9.- YouTube. (22 oct 2023). Mortal Kombat X 2015 / Historia Resumen. Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=Gf4r5tgtmno. target="_blank">https://www.youtube.com/watch?v=Gf4r5tgtmno.</a></p>
+            <p>10.- YouTube. (20 abr 2019). Mortal Kombat: La Saga en 1 Video (PARTE 1). Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=_kEk30gzjRE. target="_blank">https://www.youtube.com/watch?v=_kEk30gzjRE.</a></p>
+            <p>11.- YouTube. (25 abr 2019). Mortal Kombat: La Saga en 1 Video (PARTE 2). Recuperado el 30 de marzo de 2025, de <a href=https://www.youtube.com/watch?v=7mobkaqSdjM. target="_blank">https://www.youtube.com/watch?v=7mobkaqSdjM.</a></p>
+        </div>
+    </div>
+    <br>
+
+    <div class="container mt-4">
+        <br>
+        <h2 class="text-left">Webs</h2>
+        <div class="circular-image-container">
+            <div class="logo-animation"></div>
+            <img src="WEB.png" alt="Imagen de referencia" class="circular-image">
+        </div>
+        <div class="scroll-box">
+            <p>1.- Fandom. (n.d.). Mortal Kombat (2011 video game). Recuperado el 30 de marzo de 2025, de <a href=https://mortalkombat.fandom.com/wiki/Mortal_Kombat_(2011_video_game) target="_blank">https://mortalkombat.fandom.com/wiki/Mortal_Kombat_(2011_video_game).</a></p>
+            <p>2.- Fandom. (n.d.). Mortal Kombat X. Recuperado el 30 de marzo de 2025, de <a href=https://mortalkombat.fandom.com/wiki/Mortal_Kombat_X target="_blank">https://mortalkombat.fandom.com/wiki/Mortal_Kombat_X.</a></p>
+            <p>3.- Fandom. (n.d.). Mortal Kombat 11. Recuperado el 30 de marzo de 2025, de <a href=https://mortalkombat.fandom.com/wiki/Mortal_Kombat_11 target="_blank">https://mortalkombat.fandom.com/wiki/Mortal_Kombat_11.</a></p>
+            <p>4.- Fandom. (n.d.). Mortal Kombat 1. Recuperado el 30 de marzo de 2025, de <a href=https://mortalkombat.fandom.com/wiki/Mortal_Kombat_1 target="_blank">https://mortalkombat.fandom.com/wiki/Mortal_Kombat_1.</a></p>
+            <p>5.- Fandom. (n.d.). Mortal Kombat in other media/Video Games. Recuperado el 30 de marzo de 2025, de <a href=https://mortalkombat.fandom.com/wiki/Mortal_Kombat_in_other_media/Video_Games. target="_blank">https://mortalkombat.fandom.com/wiki/Mortal_Kombat_in_other_media/Video_Games.</a></p>
+            <p>6.- Warner Bros. Games. (n.d.). Mortal Kombat sitio web oficial. Recuperado el 30 de marzo de 2025, de <a href=https://www.mortalkombat.com/es-es. target="_blank">https://www.mortalkombat.com/es-es.</a></p>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <br>
+        <h2 class="text-left">Imagenes</h2>
+        <div class="circular-image-container">
+            <div class="logo-animation"></div>
+            <img src="Dragon.png" alt="Imagen de referencia" class="circular-image">
+        </div>
+        <div class="scroll-box">
+            <p>1. Scorpion <a href= https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/11/mortal-kombat-x-3230906.jpg?tf=1200x target="_blank">https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/11/mortal-kombat-x-3230906.jpg?tf=1200x</a></p>
+            <p>2. Sub Zero<a href= https://wallpapers.com/images/high/mortal-kombat-sub-zero-3840-x-2400-wallpaper-9x9a0rdb9scmdcxg.webp target="_blank">https://wallpapers.com/images/high/mortal-kombat-sub-zero-3840-x-2400-wallpaper-9x9a0rdb9scmdcxg.webp</a></p>
+            <p>3. Raiden<a href= https://static.wikia.nocookie.net/mortalkombat/images/4/4c/10488016_793487227349343_419696184840014430_n.jpg/revision/latest?cb=20140807023933&path-prefix=es target="_blank">https://static.wikia.nocookie.net/mortalkombat/images/4/4c/10488016_793487227349343_419696184840014430_n.jpg/revision/latest?cb=20140807023933&path-prefix=es</a></p>
+            <p>4. Liu Kang<a href= https://static.wikia.nocookie.net/mortalkombat/images/0/05/23h8209.png/revision/latest/scale-to-width-down/1000?cb=20160310135339&path-prefix=es target="_blank">https://static.wikia.nocookie.net/mortalkombat/images/0/05/23h8209.png/revision/latest/scale-to-width-down/1000?cb=20160310135339&path-prefix=es</a></p>
+            <p>5. Kitana<a href= https://www.mortalkombatwarehouse.com/mkx/kitana/loadscreen.png target="_blank">https://www.mortalkombatwarehouse.com/mkx/kitana/loadscreen.png</a></p>
+            <p>6. Kung Lao<a href= https://www.ign.com/wikis/mortal-kombat-x/Kung_Lao target="_blank">https://www.ign.com/wikis/mortal-kombat-x/Kung_Lao</a></p>
+            <p>7. Jhonny Cage<a href= https://images.alphacoders.com/114/1142150.png target="_blank">https://images.alphacoders.com/114/1142150.png</a></p>
+            <p>8. Sonya Blade<a href= https://static1.srcdn.com/wordpress/wp-content/uploads/2017/05/Sonya-Blade.jpg?q=50&fit=crop&w=1140&h=&dpr=1.5 target="_blank">https://static1.srcdn.com/wordpress/wp-content/uploads/2017/05/Sonya-Blade.jpg?q=50&fit=crop&w=1140&h=&dpr=1.5</a></p>
+            <p>9. Shao Khan<a href= https://oyster.ignimgs.com/mediawiki/apis.ign.com/mortal-kombat-11/2/2d/ShaoKhan.jpg target="_blank">https://oyster.ignimgs.com/mediawiki/apis.ign.com/mortal-kombat-11/2/2d/ShaoKhan.jpg</a></p>
+        </div>
+    </div>
+    
+    <footer class="text-center mt-5 py-3" style="background-color: rgba(0,0,0,0.8); color: goldenrod;">
+      <p>© 2025 | Proyecto Mortal Kombat</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
