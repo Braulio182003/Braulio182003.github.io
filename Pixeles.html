@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortal Kombat Clásico - La Era de los Píxeles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mk-red: #FF0000;
+      --mk-gold: #AC9203;
+      --mk-dark: #111;
+      --mk-light: #f8f8f8;
+    }
+
+    body {
+      background: black url('Pixeles.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--mk-light);
+      font-family: 'Press Start 2P', cursive;
+      line-height: 1.6;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    #fireCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    #fpsContainer {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
+    }
+
+    h1, h2 {
+      color: var(--mk-red);
+      text-align: center;
+      text-shadow: 2px 2px #000;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--mk-red);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      border-bottom: 2px solid var(--mk-red);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--mk-gold) !important;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .nav-link:hover {
+      color: white !important;
+    }
+
+    .section-box {
+      background: rgba(0, 0, 0, 0.85);
+      border: 2px solid var(--mk-red);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px var(--mk-red);
+      position: relative;
+    }
+
+    .pixel-img {
+      border: 3px solid var(--mk-gold);
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 1rem;
+      display: block;
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .pixel-img:hover {
+      transform: scale(1.02);
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      background-color: var(--mk-dark);
+      color: var(--mk-gold);
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+      border-top: 2px solid var(--mk-red);
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      h2 {
+        font-size: 1.2rem;
+      }
+      
+      .section-box {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fireCanvas"></canvas>
+  <div id="fpsContainer"></div>
+
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="portada.html">Mortal Kombat</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="bienvenida.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>La Era de los Píxeles</h1>
+
+    <article class="section-box">
+      <h2>Los Primeros Combates</h2>
+      <img src="pixel.png" alt="Animación de Mortal Kombat" class="pixel-img" loading="lazy">
+      <p>El primer <strong>Mortal Kombat</strong> fue lanzado en <strong>1992</strong> como una respuesta a otros juegos de lucha como Street Fighter II, pero con un toque oscuro, sangriento y pixelado que marcaría un antes y un después en los videojuegos.</p>
+      <p>Su apariencia se basaba en la digitalización de actores reales, lo cual lo hacía destacar entre los títulos de la época, sin perder su esencia pixel art en los efectos y escenarios.</p>
+    </article>
+
+    <article class="section-box">
+      <h2>Características Destacadas</h2>
+      <ul>
+        <li>Introducción de los icónicos <strong>Fatalities</strong>.</li>
+        <li>Jugabilidad simple pero intensa: puñetazos, patadas y combos básicos.</li>
+        <li>Disponible en máquinas arcade antes de llegar a consolas como Genesis y SNES.</li>
+        <li>Personajes inolvidables: Scorpion, Sub-Zero, Liu Kang y Raiden.</li>
+      </ul>
+    </article>
+
+    <article class="section-box">
+      <h2>Mortal Kombat II y III</h2>
+      <img src="pixel3.png" alt="Captura de pantalla de Mortal Kombat II versión arcade" class="pixel-img" loading="lazy">
+      <p><strong>Mortal Kombat II</strong> (1993) y <strong>III</strong> (1995) ampliaron el universo con más personajes, escenarios interactivos y combos más complejos.</p>
+      <p>La calidad gráfica mejoró manteniendo el estilo retro, y se consolidó como una de las franquicias más influyentes de los años 90.</p>
+    </article>
+
+    <article class="section-box">
+      <h2>Impacto Cultural</h2>
+      <p>La violencia gráfica y los <strong>Fatalities</strong> llevaron a la creación del sistema de clasificación por edades <strong>ESRB</strong>.</p>
+      <p>Mortal Kombat se convirtió en un fenómeno cultural, generando películas, cómics y torneos competitivos, todo comenzando desde estos juegos pixelados llenos de personalidad.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 | Proyecto Mortal Kombat</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script>
+    const canvas = document.getElementById('fireCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    let lastTime = performance.now();
+    let frameCount = 1;
+
+    const fireColorsPalette = [
+      [0, 0, 0],
+      [7, 7, 7],
+      [31, 7, 7],
+      [47, 15, 7],
+      [71, 15, 7],
+      [87, 23, 7],
+      [103, 31, 7],
+      [119, 31, 7],
+      [143, 39, 7],
+      [159, 47, 7],
+      [175, 63, 7],
+      [191, 71, 7],
+      [199, 71, 7],
+      [223, 79, 7],
+      [223, 87, 7],
+      [223, 87, 7],
+      [215, 95, 7],
+      [215, 95, 7],
+      [215, 103, 15],
+      [207, 111, 15],
+      [207, 119, 15],
+      [207, 127, 15],
+      [207, 135, 23],
+      [199, 135, 23],
+      [199, 143, 23],
+      [199, 151, 31],
+      [191, 159, 31],
+      [191, 159, 31],
+      [191, 167, 39],
+      [191, 167, 39],
+      [191, 175, 47],
+      [183, 175, 47],
+      [183, 183, 47],
+      [183, 183, 55],
+      [207, 207, 111],
+      [223, 223, 159],
+      [239, 239, 199],
+      [255, 255, 255]
+    ];    
+
+    const firePixelsArray = new Uint8Array(width * height);
+
+    function start() {
+      createFireDataStructure();
+      createFireSource();
+      calculateFirePropagation();
+      animate();
+    }
+
+    function createFireDataStructure() {
+      firePixelsArray.fill(0);
+    }
+
+    function calculateFirePropagation() {
+      for (let x = 0; x < width; x++) {
+        for (let y = 1; y < height; y++) {
+          const pixelIndex = x + y * width;
+          updateFireIntensityPerPixel(pixelIndex);
+        }
+      }
+    }
+
+    function updateFireIntensityPerPixel(currentPixelIndex) {
+      const belowPixelIndex = currentPixelIndex + width;
+      if (belowPixelIndex >= width * height) {
+        return;
+      }
+      const decay = Math.floor(Math.random() * 1.2);
+      const belowPixelFireIntensity = firePixelsArray[belowPixelIndex];
+      const newFireIntensity = belowPixelFireIntensity - decay >= 0 ? belowPixelFireIntensity - decay : 0;
+      
+      firePixelsArray[currentPixelIndex - decay] = newFireIntensity;
+    }
+
+    function renderFire() {
+      const imageData = ctx.createImageData(width, height);
+      const data = imageData.data;
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const pixelIndex = x + y * width;
+          const fireIntensity = firePixelsArray[pixelIndex];
+          const color = fireColorsPalette[fireIntensity];
+          const dataIndex = (x + y * width) * 4;
+          data[dataIndex] = color[0];
+          data[dataIndex + 1] = color[1];
+          data[dataIndex + 2] = color[2];
+          data[dataIndex + 3] = 255;
+        }
+      }
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    function createFireSource() {
+      for (let x = 0; x < width; x++) {
+        const overflowPixelIndex = width * height;
+        const pixelIndex = (overflowPixelIndex - width) + x;
+        firePixelsArray[pixelIndex] = 36;
+      }
+    }
+
+    function updateFPS(deltaTime) {
+      frameCount++;
+      if (frameCount % 10 === 0) {
+        const fps = Math.round(1000 / (deltaTime / 10));
+        document.getElementById('fpsContainer').innerText = `FPS: ${fps}`;
+      }
+    }
+
+    let frames = 1000000;
+
+    function animate() {
+      frames--;
+      
+      const currentTime = performance.now();
+      const deltaTime = currentTime - lastTime;
+      lastTime = currentTime;
+
+      calculateFirePropagation();
+      renderFire();
+      updateFPS(deltaTime);
+      if (frames)
+        requestAnimationFrame(animate);
+    }
+    window.addEventListener('load', start);
+
+    window.addEventListener('resize', function() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      firePixelsArray = new Uint8Array(canvas.width * canvas.height);
+      createFireDataStructure();
+      createFireSource();
+    });
+  </script>
+</body>
+</html>
