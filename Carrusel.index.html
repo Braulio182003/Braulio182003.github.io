@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas de Mortal Kombat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        :root {
+            --blood-red: #8B0000;
+            --gold: #FFD700;
+            --dark-bg: #121212;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid darkred;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar-brand, .nav-link {
+            color: goldenrod !important;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            color: white !important;
+        }
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid darkred;
+        }
+        .dropdown-item {
+            color: goldenrod !important;
+        }
+        .dropdown-item:hover {
+            color: white !important;
+            background-color: darkred;
+        }
+        .swiper-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .swiper-slide img {
+            width: 35%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .swiper-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .movie-info {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            max-width: 600px;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-left: 5px solid var(--blood-red);
+            border-radius: 5px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .swiper-slide-active .movie-info {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .movie-title {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-weight: bold;
+        }
+
+        .movie-year {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 5px 10px;
+            background: rgba(139, 0, 0, 0.5);
+            border-radius: 3px;
+        }
+
+        .movie-desc {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--gold) !important;
+            background: rgba(139, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(139, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 1.5rem !important;
+            font-weight: bold;
+        }
+
+        .swiper-pagination-bullet {
+            background: white !important;
+            opacity: 0.6 !important;
+            width: 12px !important;
+            height: 12px !important;
+            margin: 0 8px !important;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--blood-red) !important;
+            opacity: 1 !important;
+            transform: scale(1.2);
+        }
+
+        .mk-logo {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            width: 200px;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+        }
+
+        @media (max-width: 768px) {
+            .movie-info {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .movie-title {
+                font-size: 1.8rem;
+            }
+
+            .mk-logo {
+                width: 150px;
+                top: 20px;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="portada.html">Mortal Kombat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="bienvenida.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="swiper-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="Mk1.png" alt="Mortal Kombat 1995">
+                    <div class="movie-info">
+                        <h2 class="movie-title">Mortal Kombat (1995)</h2>
+                        <span class="movie-year">1995</span>
+                        <p class="movie-desc">La primera adaptación cinematográfica del famoso videojuego sigue a un grupo de luchadores que son convocados a un torneo místico donde deben luchar por el destino de la Tierra.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="Mk2.png" alt="Mortal Kombat: Annihilation">
+                    <div class="movie-info">
+                        <h2 class="movie-title">Mortal Kombat: Annihilation (1997)</h2>
+                        <span class="movie-year">1997</span>
+                        <p class="movie-desc">Secuela de la película de 1995, donde los guerreros de la Tierra deben enfrentarse a nuevas amenazas cuando el malvado Shao Kahn rompe las reglas del torneo.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="Mk3.png" alt="Mortal Kombat Legends: Scorpion's Revenge">
+                    <div class="movie-info">
+                        <h2 class="movie-title">Mortal Kombat Legends: Scorpion's Revenge (2020)</h2>
+                        <span class="movie-year">2020</span>
+                        <p class="movie-desc">Película animada que explora los orígenes de Scorpion y su búsqueda de venganza contra Sub-Zero y el clan Lin Kuei.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="Mk4.png" alt="Mortal Kombat 2021">
+                    <div class="movie-info">
+                        <h2 class="movie-title">Mortal Kombat (2021)</h2>
+                        <span class="movie-year">2021</span>
+                        <p class="movie-desc">Reboot de la franquicia cinematográfica que sigue a Cole Young, un luchador que desconoce su herencia y debe unirse a los guerreros de la Tierra para luchar contra los enemigos de Outworld.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="Mk5.png" alt="Mortal Kombat Legends: Battle of the Realms">
+                    <div class="movie-info">
+                        <h2 class="movie-title">Mortal Kombat Legends: Battle of the Realms (2021)</h2>
+                        <span class="movie-year">2021</span>
+                        <p class="movie-desc">Secuela animada que continúa la historia después de Scorpion's Revenge, con los guerreros de la Tierra enfrentándose a una nueva amenaza de Outworld.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="Mk6.png" alt="Mortal Kombat Legends: Snow Blind">
+                    <div class="movie-info">
+                        <h2 class="movie-title">Mortal Kombat Legends: Snow Blind (2022)</h2>
+                        <span class="movie-year">2022</span>
+                        <p class="movie-desc">Película animada centrada en Kenshi Takahashi y su relación con el cazarrecompensas Kuai Liang (Sub-Zero).</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="Mk7.png" alt="Mortal Kombat 2 (2025)">
+                    <div class="movie-info">
+                        <h2 class="movie-title">Mortal Kombat 2 (2025)</h2>
+                        <span class="movie-year">Próximamente</span>
+                        <p class="movie-desc">Secuela del reboot de 2021, que introducirá nuevos personajes como Johnny Cage y continuará la historia de los guerreros de Earthrealm.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3" style="background-color: rgba(0,0,0,0.8); color: goldenrod;">
+      <p>© 2025 | Proyecto Mortal Kombat</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.mySwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 1000,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+</body>
+</html>
