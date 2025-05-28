@@ -1,0 +1,29 @@
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+  }
+  
+  .section-title {
+    color: #e50914;
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .data-item {
+    background-color: #1c1c1c;
+    color: #ffffff !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .data-item:hover {
+    background-color: #e50914;
+    color: #fff;
+  }
+  

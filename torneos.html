@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Los torneos más importantes de la historia de Mortal Kombat">
+    <title>Torneos Legendarios - Mortal Kombat</title>
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/mortal-kombat" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/aptos" rel="stylesheet">
+    <style>
+        :root {
+            --mk-gold: #AC9203;
+            --mk-red: darkred;
+            --mk-bg-opacity: 0.8;
+        }
+        
+        body {
+            background: url('torneos.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Aptos', sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid darkred;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar-brand, .nav-link {
+            color: goldenrod !important;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            color: white !important;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+        }
+        .dropdown-menu {
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid darkred;
+        }
+        .dropdown-item {
+            color: goldenrod !important;
+        }
+        .dropdown-item:hover {
+            color: white !important;
+            background-color: darkred;
+            text-shadow: 0 0 5px #ff0000;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Mortal Kombat', sans-serif;
+            color: var(--mk-gold);
+            text-shadow: 2px 2px 4px black;
+            letter-spacing: 1px;
+        }
+
+        .content-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 1000px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .tournament {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            border-left: 5px solid var(--mk-gold);
+            border-radius: 8px;
+            background-color: rgba(255, 215, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tournament:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .tournament img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .tournament img:hover {
+            transform: scale(1.02);
+        }
+
+        .tournament-title {
+            font-size: 1.8rem;
+            color: #ffcc00;
+            margin-bottom: 1rem;
+            font-family: 'Mortal Kombat', sans-serif;
+        }
+
+        .tournament-description {
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        a:focus, button:focus {
+            outline: 2px solid var(--mk-gold);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1rem;
+                margin: 1rem;
+            }
+            
+            .tournament {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .tournament-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="portada.html">Mortal Kombat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="bienvenida.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="referencias.html">Referencias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container content-section">
+        <h1 class="text-center mb-4">Torneos Legendarios de Mortal Kombat</h1>
+        <p class="text-center lead">Explora los eventos más representativos que han definido la historia competitiva de Mortal Kombat a nivel mundial.</p>
+
+        <article class="tournament">
+            <h2 class="tournament-title">Evolution Championship Series (EVO)</h2>
+            <a href="https://evo.gg/" target="_blank" rel="noopener noreferrer"><img src="evo.png" alt="EVO Mortal Kombat - El torneo más importante de juegos de pelea"></a>
+            <p class="tournament-description">
+                EVO es el torneo más emblemático del mundo de los juegos de pelea. Desde su debut en Las Vegas, ha sido el escenario donde nacen las leyendas. Mortal Kombat ha tenido una presencia destacada desde MK9, y especialmente con MKX y MK11. Jugadores como SonicFox, Rewind y Tekken Master han protagonizado combates épicos que definieron metajuegos enteros. La comunidad se reúne cada año para presenciar momentos históricos y emocionantes regresos.
+            </p>
+        </article>
+
+        <article class="tournament">
+            <h2 class="tournament-title">Final Kombat</h2>
+            <img src="finalkombat.png" alt="Final Kombat - Torneo oficial de NetherRealm Studios" loading="lazy">
+            <p class="tournament-description">
+                Final Kombat es el evento culminante del circuito oficial de NetherRealm Studios. Reúne a los mejores jugadores del mundo tras un año de competencia en la Pro Kompetition. El evento es conocido por su producción cinematográfica y por ser el lugar donde se revelan tráilers importantes (como Spawn en MK11). Se celebra en Chicago y cada edición ha dejado momentos imborrables.
+            </p>
+        </article>
+
+        <article class="tournament">
+            <h2 class="tournament-title">Pro Kompetition</h2>
+            <a href="https://liquipedia.net/fighters/Mortal_Kombat_Pro_Kompetition/2025/Mexico" target="_blank" rel="noopener noreferrer"><img src="prokompet.png" alt="Pro Kompetition - Circuito competitivo oficial" loading="lazy"></a>
+            <p class="tournament-description">
+                Es el circuito competitivo oficial de Mortal Kombat 11 y ahora MK1. Incluye clasificatorios regionales, torneos online y majors presenciales. Con premios sustanciosos y un enfoque en todas las regiones del mundo (NA, LATAM, EU, Asia), esta liga permite que nuevos talentos se enfrenten a veteranos, lo que la hace vital para el desarrollo competitivo global.
+            </p>
+        </article>
+
+        <article class="tournament">
+            <h2 class="tournament-title">Combo Breaker</h2>
+            <a href="https://liquipedia.net/fighters/Combo_Breaker/2025/MK1" target="_blank" rel="noopener noreferrer"><img src="combo.png" alt="Combo Breaker - Torneo con gran ambiente comunitario" loading="lazy"></a>
+            <p class="tournament-description">
+                Combo Breaker es conocido por su atmósfera de comunidad y por ser uno de los eventos más queridos por los fans. Se celebra en Illinois, EE. UU., y ha sido escenario de momentos inolvidables, como la aparición sorpresa de personajes y enfrentamientos cargados de emoción. Su filosofía es inclusiva, enfocada en brindar una experiencia de alto nivel a todos los jugadores.
+            </p>
+        </article>
+
+        <article class="tournament">
+            <h2 class="tournament-title">CEO (Community Effort Orlando)</h2>
+            <a href="https://liquipedia.net/fighters/Community_Effort_Orlando/2025/MK1" target="_blank" rel="noopener noreferrer"><img src="ceo.png" alt="CEO - Torneo estilo lucha libre" loading="lazy"></a>
+            <p class="tournament-description">
+                CEO destaca por su presentación única al estilo lucha libre, con jugadores entrando al ring con música temática. La experiencia es tanto competitiva como entretenida, y Mortal Kombat siempre tiene un lugar protagónico en sus brackets. Combina calidad técnica con espectáculo puro, atrayendo a miles de espectadores presenciales y online.
+            </p>
+        </article>
+
+        <article class="tournament">
+            <h2 class="tournament-title">WePlay Ultimate Fighting League (WUFL)</h2>
+            <img src="weplay.png" alt="WUFL - Torneo con gran producción visual" loading="lazy">
+            <p class="tournament-description">
+                Con sede en Ucrania, WUFL fue uno de los torneos con mejor producción visual durante la pandemia. Su formato tipo liga y la participación de figuras como A F0xy Grampa, Grr y SonicFox lo convirtieron en un referente de lo que un torneo online puede alcanzar. WUFL demostró que la innovación es clave para mantener viva la escena competitiva.
+            </p>
+        </article>
+    </main>
+    <footer class="text-center mt-5 py-3" style="background-color: rgba(0,0,0,0.8); color: goldenrod;">
+      <p>© 2025 | Proyecto Mortal Kombat</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
